@@ -32,6 +32,46 @@ For development with auto-restart:
 npm run dev
 ```
 
+### Using Docker
+
+You can run this MCP server using Docker:
+
+#### Using Docker Compose (Recommended)
+
+1. Make sure you have Docker and Docker Compose installed
+2. Run the server:
+   ```bash
+   docker-compose up -d
+   ```
+3. View logs:
+   ```bash
+   docker logs weather-mcp-server
+   ```
+4. Stop the server:
+   ```bash
+   docker-compose down
+   ```
+
+#### Using Docker Directly
+
+1. Build the Docker image:
+   ```bash
+   docker build -t weather-mcp-server .
+   ```
+2. Run the container:
+   ```bash
+   docker run -d --name weather-mcp-server weather-mcp-server
+   ```
+
+#### Using the Docker Hub Image
+
+This server is also available on Docker Hub:
+
+```bash
+docker pull jeremymorgan/weather-mcp-server
+docker run -d --name weather-mcp-server jeremymorgan/weather-mcp-server
+```
+
 ### Available Tools
 
 The server provides three main tools:
@@ -134,8 +174,8 @@ To modify the server:
 
 ## License
 
-MIT License - feel free to use and modify as needed.
+CC0 1.0 Universal - feel free to use and modify as needed.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues and pull requests. 
+Contributions are welcome! Please feel free to submit issues and pull requests.

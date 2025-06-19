@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  weather-mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather-mcp-server
+    restart: unless-stopped
+    # The MCP server communicates via stdin/stdout
+    # This configuration allows docker logs to capture the output
+    tty: true
+    stdin_open: true
+    # If you need to expose a port for health checks or other purposes
+    ports:
+      - "8080:8080"
+    # Mount the application code as a volume for development (optional)
+    # volumes:
+    #   - ./:/app
